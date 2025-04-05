@@ -73,7 +73,138 @@
 
 ---
 
-## F. Predictive analysis (OPTIONAL)
+## F. Predictive analysis
+
+Workflow for predictive model
+
+### **Step 1: Generating Coordinates of Interest from a Shapefile**
+
+In this step, we generate a dense grid of latitude-longitude points within a given geographical region (e.g., a park or protected area) defined in a shapefile. These grid points represent locations where we want to monitor and predict wildfire risks. The process includes two key functions:
+
+### 🔹 `buffer_geometry(gdf, buffer_km)`
+
+- **Purpose**: Expands the boundary of the shapefile geometry by a specified distance (in kilometers).
+- **How it works**:
+    1. Projects the GeoDataFrame from geographic coordinates (lat/lon) to **World Mercator projection (EPSG:3395)**, where distances can be measured in meters.
+    2. Buffers the geometry outward by `buffer_km * 1000` meters.
+    3. Converts the buffered geometry back to **WGS 84 lat/lon (EPSG:4326)** for consistency in geospatial processing.
+
+### 🔹 `generate_grid_points(polygon, spacing_km)`
+
+- **Purpose**: Fills the given (buffered) polygon with a regular grid of points spaced approximately `spacing_km`kilometers apart.
+- **How it works**:
+    1. Calculates approximate **latitude and longitude spacing in degrees**, based on Earth's curvature.
+    2. Constructs a mesh grid across the polygon’s bounding box.
+    3. Filters the points to keep only those **that fall within the polygon**.
+    4. Returns a list of `shapely.geometry.Point` objects, each representing a latitude-longitude pair.
+
+### **Step 2: Curating the Wildfire Dataset Using NASA POWER and FIRMS**
+
+In this step, we build a training dataset by collecting climate and fire occurrence data for each generated point (from Step 1) over a specified date range. This dataset will include daily features like temperature, precipitation, and humidity, along with a target label indicating whether a wildfire occurred.
+
+### 🔹 **1. Querying NASA POWER API for Climate Data**
+
+- For each coordinate (latitude-longitude pair) and each day in the date range:
+    - We send a request to the **NASA POWER API**, which provides gridded climate data tailored for environmental research.
+    - We extract key variables such as:
+        - **Temperature** (`T2M`)
+        - **Precipitation** (`PRECTOT`)
+        - **Humidity** (`RH2M`)
+    - This gives us fine-grained, daily meteorological records at the point level.
+
+### 🔹 **2. Querying NASA FIRMS for Fire Occurrences**
+
+- In parallel, we use **NASA FIRMS (Fire Information for Resource Management System)** to check for **active fire detections** (thermal anomalies) within a defined radius (e.g., 1 km) of each point.
+- If a fire is detected near a point on a specific date, that day is marked as:
+    - **`fire = 1`**
+- If no fires are detected, it is marked:
+    - **`fire = 0`**
+- The FIRMS data is typically retrieved in bulk (for a date range and bounding box), then matched to points spatially and temporally.
+
+### 🔹 **3. Creating Final Records**
+
+- For each point and day:
+    - Combine the climate variables from NASA POWER
+    - Add the `fire` label based on FIRMS fire detections
+- This results in one row per (point, date) pair:
+    
+    
+    | latitude | longitude | date | temp | precip | humidity | fire |
+    | --- | --- | --- | --- | --- | --- | --- |
+    | 49.1234 | -123.4567 | 2023-06-15 | 25.2 | 0.00 | 48.0 | 0 |
+    | 49.1234 | -123.4567 | 2023-06-16 | 27.1 | 0.02 | 45.1 | 1 |
+
+### 🔹 **4. Exporting the Curated Dataset**
+
+- The complete dataset is stored as a CSV file (`features.csv`) and will be used in **Step 3** for training a wildfire prediction model.
+- You may also generate **rolling features** (e.g., 30-day mean temperature, cumulative precipitation) if desired.
+
+### **Step 3: Training the Wildfire Prediction Model**
+
+Once the dataset is curated with daily climate variables and wildfire labels (from **Step 2**), we move on to training a predictive model. However, the dataset is **highly imbalanced** — very few wildfire occurrences compared to non-fire days — which is typical in real-world wildfire modeling.
+
+### 🔹 **1. Tackling Class Imbalance**
+
+- A naive model would learn to always predict "no fire" and still get 99%+ accuracy.
+- To address this, we use **XGBoost**, a gradient-boosted tree model that supports weighted loss functions.
+- We compute a `scale_pos_weight`, which tells the model to give higher importance to correctly classifying the minority class (`fire = 1`):
+    
+    ```python
+    
+    pos_weight = (number of negative samples) / (number of positive samples)
+    
+    ```
+    
+
+### 🔹 **2. Model Configuration**
+
+We train an XGBoost classifier with the following configuration:
+
+```python
+python
+CopyEdit
+model = xgb.XGBClassifier(
+    n_estimators=50,
+    max_depth=3,
+    learning_rate=0.1,
+    scale_pos_weight=pos_weight,
+    use_label_encoder=False,
+    eval_metric="logloss",
+    random_state=42
+)
+model.fit(X_train, y_train)
+
+```
+
+- `n_estimators=50`: Limits the number of boosting rounds for speed.
+- `max_depth=3`: Keeps trees shallow to avoid overfitting.
+- `scale_pos_weight`: Handles class imbalance.
+- `eval_metric='logloss'`: Measures prediction uncertainty during training.
+
+### 🔹 **3. Threshold Tuning**
+
+- Instead of using the default classification threshold (0.5), we experimented with **custom thresholds**.
+- At a **threshold of 0.6**, we prioritized minimizing false positives while still capturing fire events.
+
+### 🔹 **4. Evaluation Results (Threshold = 0.6)**
+
+```
+text
+CopyEdit
+Classification Report:
+              precision    recall  f1-score   support
+
+           0     0.9997    0.9212    0.9588     61700
+           1     0.0114    0.7467    0.0224        75
+
+    accuracy                         0.9210     61775
+   macro avg     0.5055    0.8339    0.4906     61775
+weighted avg     0.9985    0.9210    0.9577     61775
+
+```
+
+- **Precision for class 1** is still low due to extreme class imbalance, but **recall is significantly improved** — the model now detects ~75% of actual fires.
+- The model effectively identifies potential fire conditions while controlling false alarms.
 
 1. **Link Findings to Your KPIs**
     - Are hazards increasing or decreasing over time?
@@ -84,7 +215,6 @@
     - Policy Recommendations: For instance, *if wildfire risk is extremely high in Region X in July*, suggest more firefighting resources or public awareness campaigns then.
 3. **Innovative or Predictive Approaches** *(Optional)*
     - If time allows, prototype a simple **machine learning** or **forecasting** model (e.g., using `scikit-learn`) to predict hazard probability.
-
 ---
 
 ## G. Sources and citations
