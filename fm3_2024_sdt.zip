@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en" dir="ltr">
+    <!--<![endif]-->
+    <head>
+                <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        
+        <title>404 Not found</title>
+        <meta content="width=device-width,initial-scale=1" name="viewport">
+        <!-- Meta data -->
+        <meta name="dcterms.title" content="404 Not found">
+        <meta name="dcterms.creator" content="Natural Resources Canada">
+        <meta name="dcterms.issued" title="W3CDTF" content="">
+        <meta name="dcterms.modified" title="W3CDTF" content="">
+        <meta name="dcterms.language" title="ISO639-2" content="eng">
+        <!-- Meta data-->
+        <!--[if gte IE 9 | !IE ]><!-->
+        <link href="/app/gcwu/theme-gcwu-fegc/assets/favicon.ico" rel="icon" type="image/x-icon">
+        <link rel="stylesheet" href="/app/gcwu/theme-gcwu-fegc/css/theme.min.css">
+        
+        <!--<![endif]-->
+        <!--[if lt IE 9]>
+        <link href="/app/gcwu/theme-gcwu-fegc/assets/favicon.ico" rel="shortcut icon" />
+        <link rel="stylesheet" href="/app/gcwu/theme-gcwu-fegc/css/ie8-theme.min.css" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="/app/gcwu/wet-boew/js/ie8-wet-boew.min.js"></script>
+        <![endif]-->
+        
+        <noscript><link rel="stylesheet" href="/app/gcwu/wet-boew/css/noscript.min.css" /></noscript>
+        
+
+    
+
+        <link rel="stylesheet" href="/css/cwfis.css" />
+    </head>
+    <body vocab="http://schema.org/" typeof="WebPage">
+<!-- Google Tag Manager (noscript) -->
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KG9WWH6" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) --> 
+        <ul id="wb-tphp">
+            <li class="wb-slc">
+                <a class="wb-sl" href="#wb-cont">Skip to main content</a>
+            </li>
+            <li class="wb-slc visible-sm visible-md visible-lg">
+                <a class="wb-sl" href="#wb-info">Skip to "About this site"</a>
+            </li>
+        </ul>
+
+                <header role="banner">
+            <div id="wb-bnr">
+                <div id="wb-bar">
+                    <div class="container">
+                        <div class="row">
+                            <object id="gcwu-sig" type="image/svg+xml" tabindex="-1" role="img" data="/app/gcwu/theme-gcwu-fegc/assets/sig-en.svg" aria-label="Government of Canada"></object>
+                            <ul id="gc-bar" class="list-inline">
+                                <li><a href="http://www.canada.ca/en/index.html" rel="external">Canada.ca</a></li>
+                                <li><a href="http://www.servicecanada.gc.ca/eng/home.shtml" rel="external">Services</a></li>
+                                <li><a href="http://www.canada.gc.ca/depts/major/depind-eng.html" rel="external">Departments</a></li>
+                                <li id="wb-lng"><h2>Language selection</h2>
+                                    <ul class="list-inline">
+                                        <li><a lang="fr" href="">Français</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <section class="wb-mb-links col-xs-12 visible-sm visible-xs" id="wb-glb-mn">
+                                <h2>Search and menus</h2>
+                                <ul class="pnl-btn list-inline text-right">
+                                    <li><a href="#mb-pnl" title="Search and menus" aria-controls="mb-pnl" class="overlay-lnk btn btn-sm btn-default" role="button"><span class="glyphicon glyphicon-search"><span class="glyphicon glyphicon-th-list"><span class="wb-inv">Search and menus</span></span></span></a></li>
+                                </ul>
+                                <div id="mb-pnl"></div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div id="wb-sttl" class="col-md-5">
+                            <a href="http://www.nrcan.gc.ca/home">
+                            <span>Natural Resources Canada</span>
+                            </a>
+                        </div>
+                        <object id="wmms" type="image/svg+xml" tabindex="-1" role="img" data="/app/gcwu/theme-gcwu-fegc/assets/wmms.svg" aria-label="Symbol of the Government of Canada"></object>
+                        <section id="wb-srch" class="visible-md visible-lg">
+                            <h2>Search</h2>
+                            <form action="URL_NRCAN_SEARCH" method="get" role="search" class="form-inline">
+                                <input type="hidden" value="s" name="st">
+                                <input type="hidden" value="10" name="num">
+                                <input type="hidden" value="x" name="s5bm3ts21rch">
+                                <input type="hidden" value="0" name="st1rt">
+                                <input type="hidden" value="eng" name="langs">
+                                <input type="hidden" value="rncannrcan" name="cdn">
+                                <div class="form-group">
+                                    <label for="wb-srch-q">Search website</label>
+                                    <input id="wb-srch-q" class="form-control" name="q" type="search" value="" size="27" maxlength="150">
+                                </div>
+                                <button type="submit" id="wb-srch-sub" class="btn btn-default">Search</button>
+                            </form>
+                        </section>
+                    </div>
+                </div>
+            </div>
+            <nav role="navigation" id="wb-sm" data-ajax-replace="//www.nrcan.gc.ca/sites/www.nrcan.gc.ca/files/menus/sitemenu-en.html" data-trgt="mb-pnl" class="wb-menu visible-md visible-lg" typeof="SiteNavigationElement">
+                <div class="container nvbar">
+                    <h2>Topics menu</h2>
+                    <div class="row">
+                        <ul class="list-inline menu">
+                            <li><a href="https://www.nrcan.gc.ca/natural-resources/21438">Our Natural Resources</a></li>
+                            <li><a href="https://www.nrcan.gc.ca/climate-change/21442">Climate Change</a></li>
+                            <li><a href="https://www.nrcan.gc.ca/energy-efficiency/10832">Energy Efficiency</a></li>
+                            <li><a href="https://www.nrcan.gc.ca/maps-tools-and-publications/21448">Maps, Tools and Publications</a></li>
+                            <li><a href="https://www.rncanengagenrcan.ca/en">Public Consultations</a></li>
+                            <li><a href="https://www.nrcan.gc.ca/science-and-data/21444">Science and Data</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <nav role="navigation" id="wb-bc" property="breadcrumb">
+                <h2>You are here:</h2>
+                <div class="container">
+                    <div class="row">
+                                            </div>
+                </div>
+            </nav>
+        </header>
+                <div class="container">
+            <div class="row">
+                <main role="main" property="mainContentOfPage" class="col-md-9 col-md-push-3">
+                         
+
+
+<h1>404 Not found</h1>
+
+
+
+
+
+                </main>
+
+                    <nav role="navigation" id="wb-sec" typeof="SiteNavigationElement" class="col-md-3 col-md-pull-9 visible-md visible-lg">
+        <h2>Section menu</h2>
+
+        <ul class="list-group menu list-unstyled">
+            <li>
+                <h3 class="wb-navcurr">
+                    <a href="/home">
+                        <abbr title="Canadian Wildland Fire Information System">CWFIS</abbr>
+                    </a>
+                </h3>
+                <ul class="list-group menu list-unstyled">
+                    <li><a class="list-group-item" href="/background">Background Information</a></li>
+                    <li><a class="list-group-item" href="/maps/fm3?type=fwih">Maps and Reports</a>
+                        <ul class="list-group menu list-unstyled">
+                            <li><a class="list-group-item" href="/interactive-map">Interactive map</a></li>
+                            <li><a class="list-group-item" href="/maps/fm3?type=fwih">Current Conditions</a></li>
+                            <li><a class="list-group-item" href="/maps/fw">Fire Danger</a></li>
+                            <li><a class="list-group-item" href="/maps/wx">Weather</a></li>
+                            <li><a class="list-group-item" href="/maps/fw?type=fwi">Fire Weather</a></li>
+                            <li><a class="list-group-item" href="/maps/fb">Fire Behavior</a></li>
+                            <li><a class="list-group-item" href="/maps/fm3?type=tri">Fire M3 Hotspots</a></li>
+                            <li><a class="list-group-item" href="/maps/forecasts">Monthly and Seasonal Forecasts</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="list-group-item" href="/report">National Wildland Fire Situation Report</a></li>
+                    <li><a class="list-group-item" href="/ha">Historical Analysis</a>
+                        <ul class="list-group menu list-unstyled">
+                            <li><a class="list-group-item" href="/ha/fwnormals">Fire Weather Normals</a></li>
+                            <li><a class="list-group-item" href="/ha/fbnormals">Fire Behavior Normals</a></li>
+                            <li><a class="list-group-item" href="/ha/nfdb">Canadian National Fire Database (CNFDB)</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="list-group-item" href="/datamart">CWFIS Datamart</a></li>
+                    <li><a class="list-group-item" href="http://cfs.nrcan.gc.ca/subjects/read/5">Publications</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+            </div>
+        </div>
+        
+
+            	<footer role="contentinfo" id="wb-info" class="visible-sm visible-md visible-lg wb-navcurr">
+            <div class="container">
+                <nav role="navigation">
+                    <h2>About this site</h2>
+                    <ul id="gc-tctr" class="list-inline">
+                        <li><a rel="license" href="http://www.nrcan.gc.ca/terms-conditions/10847">Terms and conditions</a></li>
+                        <li><a href="http://www.nrcan.gc.ca/transparency/1122">Transparency</a></li>
+                    </ul>
+                    <div class="row">
+                        <section class="col-sm-3">
+                            <h3><a href="http://www.nrcan.gc.ca/department">About Us</a></h3>
+                            <ul class="list-unstyled">
+                                <li><a href="http://www.nrcan.gc.ca/deputy-minister/10844">Our Deputy Minister</a></li>
+                                <li><a href="http://www.nrcan.gc.ca/acts-regulations/57">Acts and Regulations</a></li>
+                                <li><a href="http://www.nrcan.gc.ca/careers/67">Career Opportunities</a></li>
+                                <li><a href="http://www.nrcan.gc.ca/publications/1138">Publications and Reports</a></li>
+                            </ul>
+                        </section>
+                        <section class="col-sm-3">
+                            <h3><a href="http://www.nrcan.gc.ca/media-room/1505">News</a></h3>
+                            <ul class="list-unstyled">
+                                <li><a href="http://news.gc.ca/web/dsptch-dstrbr-en.do?mthd=advSrch&crtr.dpt1D=6683&crtr.thm1D=&crtr.tp1D=1&crtr.sj1D=&crtr.lc1D=&crtr.aud1D=&crtr.kw=&crtr.dyStrtVl=1&crtr.mnthStrtVl=1&crtr.yrStrtVl=2014&crtr.dyndVl=4&crtr.mnthndVl=9&crtr.yrndVl=2020">News Releases</a></li>
+                                <li><a href="http://news.gc.ca/web/dsptch-dstrbr-en.do?mthd=advSrch&crtr.dpt1D=6683&crtr.thm1D=&crtr.tp1D=3&crtr.sj1D=&crtr.lc1D=&crtr.aud1D=&crtr.kw=&crtr.dyStrtVl=1&crtr.mnthStrtVl=1&crtr.yrStrtVl=2014&crtr.dyndVl=4&crtr.mnthndVl=9&crtr.yrndVl=2020">Media Advisories</a></li>
+                                <li><a href="http://www.nrcan.gc.ca/media-room/photo-gallery/1871">Photo Gallery</a></li>
+                            </ul>
+                        </section>
+                        <section class="col-sm-3">
+                            <h3><a href="http://contact-contactez.nrcan-rncan.gc.ca/index.cfm?lang=eng&sid=7&context=home">Contact Us</a></h3>
+                            <ul class="list-unstyled">
+                                <li><a href="http://www2.nrcan.gc.ca/dpspub/index.cfm?fuseaction=phonedir.showForm&userLang=E">Find an Employee</a></li>
+                            </ul>
+                        </section>
+                        <section class="col-sm-3">
+                            <h3><a href="http://www.nrcan.gc.ca/stay-connected/10841">Stay connected</a></h3>
+                            <ul class="list-unstyled">
+                            	<li><a href="https://twitter.com/NRCan">Twitter</a></li>
+                            	<li><a href="http://www.youtube.com/user/NaturalResourcesCa">YouTube</a></li>
+                            	<li><a href="http://www.nrcan.gc.ca/media-room/RSS-feeds/1907">Feeds</a></li>
+                            </ul>
+                        </section>
+                    </div>
+                </nav>
+            </div>
+            <div id="gc-info">
+                <div class="container">
+                    <nav role="navigation">
+                        <h2>Government of Canada footer</h2>
+                        <ul class="list-inline">
+                            <li><a href="http://healthycanadians.gc.ca/index-eng.php"><span>Health</span></a></li>
+                            <li><a href="http://www.voyage.gc.ca/index-eng.asp"><span>Travel</span></a></li>
+                            <li><a href="http://www.servicecanada.gc.ca/eng/home.shtml"><span>Service Canada</span></a></li>
+                            <li><a href="http://www.jobbank.gc.ca/intro-eng.aspx"><span>Jobs</span></a></li>
+                            <li><a href="http://actionplan.gc.ca/en"><span>Economy</span></a></li>
+                            <li id="canada-ca"><a href="http://www.canada.ca/en/index.html">Canada.ca</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </footer>        <!--[if gte IE 9 | !IE ]><!-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.js"></script>
+        <script src="/app/gcwu/wet-boew/js/wet-boew.min.js"></script>
+        <!--<![endif]-->
+        <!--[if lt IE 9]>
+		<script src="/app/gcwu/wet-boew/js/ie8-wet-boew2.min.js"></script>
+		<![endif]-->
+        <script src="/app/gcwu/theme-gcwu-fegc/js/theme.min.js"></script>
+
+        <script>
+    $("header + .container").prepend('<div class="row"><div class="col-md-12"><p id="disclaimer"><strong>Disclaimer:</strong> The information, maps and data services available through the Canadian Wildland Fire Information System are approximations based on available data, and may not show the most current fire situation.  For additional maps and information on the current conditions, please visit the fire management agency website for your region of interest (province, territory or park). <a href="http://www.ciffc.ca/index.php?option=com_content&task=view&id=59&Itemid=129">Links to these agencies are available here</a>. <strong><a href="/liability">Limitation of Liability</a></strong></p></div>');
+</script>
+<script>
+<!-- Google Tag Manager -->
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KG9WWH6');
+<!-- End Google Tag Manager -->
+  
+</script>
+
+
+    </body>
+</html>
